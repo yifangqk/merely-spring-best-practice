@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: telegram-messaging
+  datasource:
+    url: jdbc:mysql://localhost:3307/shopapp
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  servlet:
+    multipart:
+      max-request-size: 10MB
+      max-file-size: 10MB
+
+app:
+  bot:
+    telegram:
+      error:
+        channel_id: -4501184097
+        bot_id: 7520882651:AAGkjwiPpm9Is4GTBkr2iWVSL5cQBgXlJLc
+server:
+  port: ${PORT:8080}
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 10240
+
+security:
+  jwt:
+    signing-key: nHZZKGGv34XDYpt7FRyWLBzGXWtUH78vWv4NH38JABw7cjE8Vka25OczX0VtaOPv
+    expires-in: 3600
